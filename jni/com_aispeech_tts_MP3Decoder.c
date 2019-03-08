@@ -13,8 +13,7 @@
 
 short pcm_l[INBUF_SIZE];
 short pcm_r[INBUF_SIZE];
-
-static hip_t hip = NULL;
+ hip_t hip = NULL;
 
 JNIEXPORT void JNICALL Java_com_aispeech_tts_MP3Decoder_init
 (JNIEnv *env, jclass objclass)
@@ -45,4 +44,5 @@ JNIEXPORT void JNICALL Java_com_aispeech_tts_MP3Decoder_destroy
         (JNIEnv *env, jclass objclass)
 {
     hip_decode_exit(hip);
+hip = NULL;
 }
